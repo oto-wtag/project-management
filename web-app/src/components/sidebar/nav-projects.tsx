@@ -72,8 +72,10 @@ export function NavProjects({
         ))}
         <SidebarMenuItem>
           <SidebarMenuButton className="text-sidebar-foreground/70">
-            <MoreHorizontal className="text-sidebar-foreground/70" />
-            <Link to="/projects">More</Link>
+            <Link to="/projects" className="flex w-full items-center gap-2">
+              <MoreHorizontal className="text-sidebar-foreground/70" />
+              More
+            </Link>
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>

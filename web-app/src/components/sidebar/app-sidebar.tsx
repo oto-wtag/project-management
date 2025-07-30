@@ -18,7 +18,7 @@ import { NavMain } from '@/components/sidebar/nav-main';
 import { NavProjects } from '@/components/sidebar/nav-projects';
 import { NavSettings } from '@/components/sidebar/nav-settings';
 import { NavFooter } from '@/components/sidebar/nav-footer';
-import { TeamSwitcher } from '@/components/sidebar/team-switcher';
+import { WorkspaceSwitcher } from '@/components/sidebar/workspace-switcher';
 import {
   Sidebar,
   SidebarContent,
@@ -30,7 +30,7 @@ import { Separator } from '../ui/separator';
 
 // This is sample data.
 const data = {
-  teams: [
+  workspaces: [
     {
       name: 'Acme Inc',
       logo: GalleryVerticalEnd,
@@ -139,7 +139,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <WorkspaceSwitcher workspaces={data.workspaces} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
