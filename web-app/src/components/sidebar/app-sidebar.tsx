@@ -8,14 +8,16 @@ import {
   GalleryVerticalEnd,
   Map,
   PieChart,
-  Settings2,
   SquareTerminal,
+  BetweenHorizontalEnd,
+  Users,
+  Headset,
 } from 'lucide-react';
 
 import { NavMain } from '@/components/sidebar/nav-main';
 import { NavProjects } from '@/components/sidebar/nav-projects';
 import { NavSettings } from '@/components/sidebar/nav-settings';
-import { NavUser } from '@/components/sidebar/nav-user';
+import { NavFooter } from '@/components/sidebar/nav-footer';
 import { TeamSwitcher } from '@/components/sidebar/team-switcher';
 import {
   Sidebar,
@@ -24,14 +26,10 @@ import {
   SidebarHeader,
   SidebarRail,
 } from '@/components/ui/sidebar';
+import { Separator } from '../ui/separator';
 
 // This is sample data.
 const data = {
-  user: {
-    name: 'shadcn',
-    email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
-  },
   teams: [
     {
       name: 'Acme Inc',
@@ -112,29 +110,6 @@ const data = {
         },
       ],
     },
-    {
-      title: 'Settings',
-      url: '#',
-      icon: Settings2,
-      items: [
-        {
-          title: 'General',
-          url: '#',
-        },
-        {
-          title: 'Team',
-          url: '#',
-        },
-        {
-          title: 'Billing',
-          url: '#',
-        },
-        {
-          title: 'Limits',
-          url: '#',
-        },
-      ],
-    },
   ],
   projects: [
     {
@@ -154,9 +129,10 @@ const data = {
     },
   ],
   settings: [
-    { name: 'Workspaces', url: '#', icon: PieChart },
-    { name: 'Team', url: '#', icon: PieChart },
+    { name: 'Workspaces', url: '#', icon: BetweenHorizontalEnd },
+    { name: 'Team', url: '#', icon: Users },
   ],
+  footer: [{ name: 'Support', url: '#', icon: Headset }],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -168,10 +144,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
+        <Separator className="hidden group-data-[collapsible=icon]:block" />
         <NavSettings settings={data.settings} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavFooter footer={data.footer} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

@@ -2,16 +2,15 @@ import { type LucideIcon } from 'lucide-react';
 
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 
-export function NavSettings({
-  settings,
+export function NavFooter({
+  footer,
 }: {
-  settings: {
+  footer: {
     name: string;
     url: string;
     icon: LucideIcon;
@@ -19,9 +18,8 @@ export function NavSettings({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Settings</SidebarGroupLabel>
       <SidebarMenu>
-        {settings.map((item) => (
+        {footer.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild tooltip={item.name}>
               <a href={item.url}>

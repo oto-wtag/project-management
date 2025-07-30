@@ -29,7 +29,7 @@ export default function AppLayout() {
       <AppSidebar />
       <SidebarInset>
         <AppSidebarHeader breadcrumbs={breadcrumbs} />
-        <div className="p-4">
+        <div className="p-4 text-sm">
           <Outlet />
         </div>
       </SidebarInset>
